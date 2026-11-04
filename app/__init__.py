@@ -8,7 +8,7 @@ from app.clientes.routes import bp_clientes
 from app.productos.routes import bp_productos
 from app.pedidos.routes import bp_pedidos
 
-from app import models
+from flask import render_template
 
 def create_app():
 
@@ -22,6 +22,6 @@ def create_app():
 
     @app.route("/")
     def inicio():
-        return "Bienvenido a TechBol"
+        return render_template("index.html")
 
     return app

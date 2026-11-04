@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+
+<h2>Clientes</h2>
+
+<a href="{{ url_for('clientes.create') }}"
+   class="btn btn-success mb-3">
+    Nuevo Cliente
+</a>
+
+<table class="table table-bordered">
+
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Teléfono</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        {% for cliente in clientes %}
+
+        <tr>
+            <td>{{ cliente.id }}</td>
+            <td>{{ cliente.nombre }}</td>
+            <td>{{ cliente.telefono }}</td>
+
+            <td>
+
+                <a href="{{ url_for('clientes.edit', id=cliente.id) }}"
+                   class="btn btn-warning btn-sm">
+                    Editar
+                </a>
+
+                <a href="{{ url_for('clientes.delete', id=cliente.id) }}"
+                   class="btn btn-danger btn-sm"
+                   onclick="return confirm('¿Eliminar este cliente?')">
+                    Eliminar
+                </a>
+
+            </td>
+
+        </tr>
+
+        {% endfor %}
+
+    </tbody>
+
+</table>
+
+{% endblock %}

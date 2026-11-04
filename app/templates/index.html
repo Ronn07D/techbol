@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+
+<div class="text-center mt-5">
+
+    <h1 class="display-4">
+        Sistema de Gestión TechBol
+    </h1>
+
+    <p class="lead">
+        Administración de Productos, Clientes y Pedidos
+    </p>
+
+    <hr>
+
+</div>
+
+<div class="row mt-4">
+
+    <div class="col-md-4">
+        <div class="card shadow">
+
+            <div class="card-body text-center">
+
+                <h4>📦 Productos</h4>
+
+                <p>
+                    Gestión del inventario de productos.
+                </p>
+
+                <a href="{{ url_for('productos.index') }}"class="btn btn-primary">
+                    Ver Productos
+                </a>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card shadow">
+
+            <div class="card-body text-center">
+
+                <h4>👥 Clientes</h4>
+
+                <p>
+                    Administración de clientes registrados.
+                </p>
+
+                <a href="{{ url_for('clientes.index') }}"class="btn btn-success">
+                    Ver Clientes
+                </a>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card shadow">
+
+            <div class="card-body text-center">
+
+                <h4>🛒 Pedidos</h4>
+
+                <p>
+                    Gestión de ventas y pedidos realizados.
+                </p>
+
+                <a href="{{ url_for('pedidos.index') }}"class="btn btn-warning">
+                    Ver Pedidos
+                </a>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
